@@ -1,0 +1,23 @@
+{
+  "来到受保护页面": "Welcome {name} to protected page",
+  "您已成功登录": "You have successfully logged in.",
+  "登录失败": "Username {name} or password {password} is incorrect",
+  "关于页面": "About page",
+  "当前语言": "Language",
+  "当前时间": "Time",
+  "左侧菜单": "Left menu",
+  "语言切换": "Language switch",
+  "公共底部": "Footer",
+  "模拟登录": "Mock login",
+  "退出登录": "Logout",
+  "用户信息": "User Information",
+  "返回": "Back",
+  "登录": "Login",
+  "用户名": "User name",
+  "密码": "user password",
+  "计数": "Count",
+  "计数x2": "Double count",
+  "增加": "Increment",
+  "设置": "Set",
+  "清除": "Clear"
+}

@@ -1,0 +1,6 @@
+<template>
+  <t-footer
+    >Copyright @ 2019-{{ new Date().getFullYear() }} Tencent. All Rights
+    Reserved. {{ $t("公共底部") }}</t-footer
+  >
+</template>
