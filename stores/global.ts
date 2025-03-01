@@ -3,7 +3,7 @@ import type { RadioValue } from "tdesign-mobile-vue";
 export const useGlobalStore = defineStore("global", {
   state: () => ({
     lang: "zh",
-    theme: "light",
+    theme: "dark",
     drawer: false,
   }),
   actions: {

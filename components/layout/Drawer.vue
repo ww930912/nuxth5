@@ -72,6 +72,5 @@ defineExpose({ open, close });
 <style scopde>
 .button-host {
   margin: 0 16px;
-  margin-top: auto;
 }
 </style>
