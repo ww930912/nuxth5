@@ -4,19 +4,12 @@ import enConfig from "tdesign-mobile-vue/es/locale/en_US";
 import ptConfig from "tdesign-mobile-vue/es/locale/ru_RU";
 
 const { locale } = useI18n();
-const gstore = useGlobalStore();
-const { setLang } = gstore;
 
 let globalConfig: any = ref({});
-watch(
-  locale,
-  (n, o) => {
-    globalConfig.value =
-      n === "en" ? enConfig : n === "pt" ? ptConfig : zhConfig;
-    setLang(n);
-  },
-  { immediate: true }
-);
+onMounted(() => {
+  const n = locale.value;
+  globalConfig.value = n === "en" ? enConfig : n === "pt" ? ptConfig : zhConfig;
+});
 </script>
 
 <template>

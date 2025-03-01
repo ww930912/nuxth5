@@ -7,7 +7,9 @@
   >
     <template #footer>
       <div class="button-host">
-        <t-button variant="outline" size="large" block>操作</t-button>
+        <t-button variant="outline" size="large" block @click="toggleDrawer">{{
+          $t("返回")
+        }}</t-button>
       </div>
     </template>
   </t-drawer>
@@ -24,29 +26,31 @@ import {
 } from "tdesign-icons-vue-next";
 
 const gstore = useGlobalStore();
+const { t } = useI18n();
+const { toggleDrawer } = gstore;
 const baseSidebar = ref([
   {
-    title: "菜单一",
+    title: `${t("菜单")}1`,
     icon: () => h(DashboardIcon),
   },
   {
-    title: "菜单二",
+    title: `${t("菜单")}2`,
     icon: () => h(ServerIcon),
   },
   {
-    title: "菜单三",
+    title: `${t("菜单")}3`,
     icon: () => h(RootListIcon),
   },
   {
-    title: "菜单四",
+    title: `${t("菜单")}4`,
     icon: () => h(ControlPlatformIcon),
   },
   {
-    title: "菜单五",
+    title: `${t("菜单")}5`,
     icon: () => h(PreciseMonitorIcon),
   },
   {
-    title: "菜单六",
+    title: `${t("菜单")}6`,
     icon: () => h(PlayCircleIcon),
   },
 ]);

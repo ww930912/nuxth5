@@ -13,11 +13,17 @@
   "用户信息": "User Information",
   "返回": "Back",
   "登录": "Login",
+  "注册": "Register",
   "用户名": "User name",
   "密码": "user password",
   "计数": "Count",
   "计数x2": "Double count",
   "增加": "Increment",
   "设置": "Set",
-  "清除": "Clear"
+  "清除": "Clear",
+  "体育": "Sport",
+  "赌场": "Casino",
+  "投注单": "Bet List",
+  "我的": "Mine",
+  "菜单": "Menu"
 }

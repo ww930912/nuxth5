@@ -1,14 +1,14 @@
 <script lang="ts" setup>
-const { setLocale } = useI18n();
+const router = useRouter();
 const localePath = useLocalePath();
-const cstore = useCounterStore();
 const ustore = useUserStore();
-const gstore = useGlobalStore();
 
 const current = ref(1);
 const { setName } = ustore;
 const handleChange = (lang: "zh" | "en" | "pt") => {
-  setLocale(lang);
+  console.log("lang---", lang);
+  // setLocale(lang);
+  router.replace(lang === "zh" ? "/" : lang).then(() => location.reload());
 };
 </script>
 
@@ -50,10 +50,9 @@ const handleChange = (lang: "zh" | "en" | "pt") => {
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .home {
   padding: 20px;
-  color: var(--td-text-color-primary);
   .switch > button {
     cursor: pointer;
   }

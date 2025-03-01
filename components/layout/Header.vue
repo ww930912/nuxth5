@@ -1,8 +1,7 @@
 <script lang="ts" setup>
 const gstore = useGlobalStore();
 const { setTheme, toggleDrawer } = gstore;
-const { nowTime } = useNowTime();
-const { locale } = useI18n();
+
 onMounted(() => setTheme(gstore.theme));
 </script>
 
@@ -18,8 +17,8 @@ onMounted(() => setTheme(gstore.theme));
       />
     </t-col>
     <t-col span="12" class="right">
-      <t-button theme="primary">登录</t-button>
-      <t-button theme="primary">注册</t-button>
+      <t-button theme="primary" size="small">{{ $t("登录") }}</t-button>
+      <t-button theme="primary" size="small">{{ $t("注册") }}</t-button>
       <span
         :class="gstore.theme === 'light' ? 'toggle' : 'toggle active'"
         @click="() => setTheme(gstore.theme === 'light' ? 'dark' : 'light')"
