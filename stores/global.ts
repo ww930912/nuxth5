@@ -4,6 +4,7 @@ export const useGlobalStore = defineStore("global", {
   state: () => ({
     lang: "zh",
     theme: "light",
+    drawer: false,
   }),
   actions: {
     setLang(lang: string) {
@@ -12,6 +13,9 @@ export const useGlobalStore = defineStore("global", {
     setTheme(theme: RadioValue) {
       document.documentElement.setAttribute("theme-mode", theme.toString());
       this.theme = theme.toString();
+    },
+    toggleDrawer() {
+      this.drawer = !this.drawer;
     },
   },
   persist: {

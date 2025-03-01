@@ -21,8 +21,10 @@ watch(
 
 <template>
   <t-config-provider :global-config="globalConfig">
-    <t-layout class="home">
+    <main class="home">
       <LayoutHeader />
+      <LayoutDrawer />
+      <slot />
       <!-- <t-layout>
         <t-aside>
           <LayoutAside />
@@ -34,6 +36,7 @@ watch(
           <LayoutFooter />
         </t-layout>
       </t-layout> -->
-    </t-layout>
+      <LayoutFooter />
+    </main>
   </t-config-provider>
 </template>

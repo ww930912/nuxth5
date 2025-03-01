@@ -16,7 +16,6 @@ const handleChange = (lang: "zh" | "en" | "pt") => {
   <div class="home">
     <ItemRow title="vue-i18n">
       <div class="switch">
-        {{ $t("语言切换") }}&emsp;
         <button @click="handleChange('zh')">zh</button>&emsp;
         <button @click="handleChange('en')">en</button>&emsp;
         <button @click="handleChange('pt')">pt</button>&emsp;
@@ -39,7 +38,7 @@ const handleChange = (lang: "zh" | "en" | "pt") => {
       <button @click="setName('')">{{ $t("清除") }}</button>
     </ItemCol>
     <hr /> -->
-    <ItemCol title="tdesign-ui">
+    <!-- <ItemCol title="tdesign-ui">
       <t-date-picker mode="date" :first-day-of-week="7" />
       <t-pagination
         v-model="current"
@@ -47,13 +46,14 @@ const handleChange = (lang: "zh" | "en" | "pt") => {
         show-jumper
         :max-page-btn="5"
       />
-    </ItemCol>
+    </ItemCol> -->
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .home {
   padding: 20px;
+  color: var(--td-text-color-primary);
   .switch > button {
     cursor: pointer;
   }
