@@ -6,6 +6,11 @@
     @item-click="itemClick"
   >
     <template #footer>
+      <div class="switch">
+        <button @click="handleChange('zh')">zh</button>&emsp;
+        <button @click="handleChange('en')">en</button>&emsp;
+        <button @click="handleChange('pt')">pt</button>&emsp;
+      </div>
       <div class="button-host">
         <t-button variant="outline" size="large" block @click="toggleDrawer">{{
           $t("返回")
@@ -24,7 +29,8 @@ import {
   RootListIcon,
   ServerIcon,
 } from "tdesign-icons-vue-next";
-
+const props = defineProps(["setLoading"]);
+const router = useRouter();
 const gstore = useGlobalStore();
 const { t } = useI18n();
 const { toggleDrawer } = gstore;
@@ -69,12 +75,34 @@ const itemClick = (
 ) => {
   console.log("itemclick: ", index, item.title, context);
 };
+const setLoading = props.setLoading(true);
+onMounted(() => {
+  window.addEventListener("beforeunload", setLoading);
+  setTimeout(() => {
+    props.setLoading(false);
+  }, 600);
+});
 
+onUnmounted(() => {
+  window.removeEventListener("beforeunload", setLoading);
+});
+const handleChange = async (lang: "zh" | "en" | "pt") => {
+  toggleDrawer();
+  console.log("lang---", lang);
+  // setLocale(lang);
+  props.setLoading(true);
+  await router.replace(lang === "zh" ? "/" : lang);
+  location.reload();
+};
 defineExpose({ open, close });
 </script>
 
 <style scopde>
+.switch,
 .button-host {
   margin: 0 16px;
+}
+.switch {
+  margin-bottom: 10px;
 }
 </style>
